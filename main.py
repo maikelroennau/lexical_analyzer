@@ -17,6 +17,7 @@ def run():
 
     print automaton.validate('1.0')
     print automaton.validate('4.2')
+    print automaton.validate('4.')
     print automaton.validate('56.9')
     print automaton.validate('0.53')
     print automaton.validate('0.55593')
