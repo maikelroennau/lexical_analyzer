@@ -1,19 +1,26 @@
 from automaton import Automaton
 
 def run():
-    automaton = Automaton('1', {'4'})
+    automaton = Automaton('q1', {'q4'})
 
-    automaton.add_state('1', {'d':'3', '+':'2', '-':'2'})
-    automaton.add_state('2', {'d':'3'})
-    automaton.add_state('3', {'d':'3', '.':'4'})
-    automaton.add_state('4', {'d':'4'})
+    automaton.add_state('q1', {'+':'q2', '-':'q2'})
+    automaton.add_state('q1', {str(i):'q3' for i in range(0, 10)})
+
+    automaton.add_state('q2', {str(i):'q3' for i in range(0, 10)})
+
+    automaton.add_state('q3', {str(i):'q3' for i in range(0, 10)})
+    automaton.add_state('q3', {'.':'q4'})
+
+    automaton.add_state('q4', {str(i):'q4' for i in range(0, 10)})
 
     automaton.show_graph()
 
-    print automaton.validate('d.d')
-    print automaton.validate('d.')
-    print automaton.validate('dd.d')
-    print automaton.validate('d.dd')
+    print automaton.validate('1.0')
+    print automaton.validate('4.2')
+    print automaton.validate('56.9')
+    print automaton.validate('0.53')
+    print automaton.validate('0.55593')
+    print automaton.validate('4582580.99553')
 
 if __name__ == '__main__':
     run()

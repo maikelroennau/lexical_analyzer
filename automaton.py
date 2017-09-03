@@ -7,7 +7,7 @@ class Automaton:
 
     def add_state(self, key, value):
         if self.graph.has_key(key):
-            self.graph[key].append(value)
+            self.graph[key].update(value)
         else:
             self.graph[key] = value
 
