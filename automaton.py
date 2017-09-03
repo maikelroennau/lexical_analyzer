@@ -23,6 +23,15 @@ class Automaton:
         return state in self.final_states
         
 
+    def set_initial_state(self, state):
+        self.initial_state = state
+
+    def set_final_states(self, states):
+        self.final_states = states
+
+    def clear_all_states(self):
+        self.graph.clear()
+
     def show_graph(self):
         for key in self.graph.keys():
             print '{} : {}'.format(key, self.graph[key])
