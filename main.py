@@ -38,8 +38,7 @@ def run():
 
     automaton.add_state('q1', {'\"':'q2'})
 
-    automaton.add_state('q2', {i:'q2' for i in string.ascii_lowercase})
-    automaton.add_state('q2', {i:'q2' for i in string.ascii_uppercase})
+    automaton.add_state('q2', {i:'q2' for i in (string.ascii_lowercase + string.ascii_uppercase)})
     automaton.add_state('q2', {' ':'q2', '\"':'q3'})
     
     automaton.add_state('q3', {}) # even it is empty, it should be added
@@ -59,8 +58,7 @@ def run():
 
     automaton.add_state('q2', {'*':'q3'})
 
-    automaton.add_state('q3', {i:'q3' for i in string.ascii_lowercase})
-    automaton.add_state('q3', {i:'q3' for i in string.ascii_uppercase})
+    automaton.add_state('q3', {i:'q3' for i in (string.ascii_lowercase + string.ascii_uppercase)})
     automaton.add_state('q3', {' ':'q3', '*':'q4'})
 
     automaton.add_state('q4', {'/':'q5'})
