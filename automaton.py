@@ -47,8 +47,14 @@ class Automaton:
     def set_initial_state(self, state):
         self.initial_state = state
 
+    def get_initial_state(self):
+        return self.initial_state
+
     def set_final_states(self, states):
         self.final_states = states
+
+    def get_final_states(self):
+        return self.final_states
 
     def clear_all_states(self):
         self.graph.clear()

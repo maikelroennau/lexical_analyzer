@@ -17,6 +17,3 @@ asd
 -- Teste
 Tales Viegas --
 char
-continue
-break
-const
