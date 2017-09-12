@@ -216,7 +216,7 @@ def run():
     automaton.add_state('q40', get_numerals('q8'))
     automaton.add_state('q40', get_alphabet('q8'))
 
-    words = read_text_file('words.txt')
+    words = filter(None, read_text_file('words.txt'))
     get_validation(automaton, words, primitives, identifiers)
 
 if __name__ == '__main__':
