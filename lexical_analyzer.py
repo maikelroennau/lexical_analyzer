@@ -1,4 +1,5 @@
 from string import ascii_lowercase, ascii_uppercase
+import sys
 
 from automaton import Automaton
 
@@ -25,8 +26,13 @@ def get_validation(automaton, words, primitives, identifiers):
             error_list.append(str(i+1))
 
     print '\nTable of symbols:'
-    for i, symbol in enumerate(symbols_table.keys()):
-        print '{} - {}'.format(i+1, symbol)
+    keys = symbols_table.keys()
+    values = symbols_table.values()
+
+    values, keys  = zip(*sorted(zip(values, keys)))
+
+    for i in range(len(keys)):
+        print '{} - {}'.format(values[i], keys[i])
 
     if len(error_list) > 0:
         print '\nThe program has erros in the lines: {}'.format(', '.join(error_list))
@@ -216,7 +222,7 @@ def run():
     automaton.add_state('q40', get_numerals('q8'))
     automaton.add_state('q40', get_alphabet('q8'))
 
-    words = filter(None, read_text_file('words.txt'))
+    words = filter(None, read_text_file(sys.argv[1]))
     get_validation(automaton, words, primitives, identifiers)
 
 if __name__ == '__main__':
