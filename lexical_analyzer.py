@@ -5,12 +5,15 @@ from automaton import Automaton
 
 
 def get_validation(automaton, words, primitives, identifiers):
-    print '\nValidating words: ' + ', '.join(words) + '\n'
+    print '\nValidating words: ' + ', '.join(filter(None, words)) + '\n'
 
     symbols_table = {}
     error_list = []
 
     for i, word in enumerate(words):
+        if word == '':
+            continue
+
         result = automaton.validate_identifier(word)
         
         if result is not False:
@@ -49,7 +52,6 @@ def validate_words(automaton, words):
 def read_text_file(path):
     with open(path, 'r') as file:
         return file.read().split('\n')
-
 
 def get_numerals(state):
     return {str(i): state for i in range(0, 10)}
@@ -222,7 +224,7 @@ def run():
     automaton.add_state('q40', get_numerals('q8'))
     automaton.add_state('q40', get_alphabet('q8'))
 
-    words = filter(None, read_text_file(sys.argv[1]))
+    words = read_text_file(sys.argv[1])
     get_validation(automaton, words, primitives, identifiers)
 
 if __name__ == '__main__':
