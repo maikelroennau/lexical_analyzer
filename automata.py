@@ -1,4 +1,4 @@
-class Automaton:
+class Automata:
 
     def __init__(self, initial_state, final_states):
         self.graph = {}
