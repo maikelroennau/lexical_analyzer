@@ -4,4 +4,4 @@ A simple implementation of a lexical analyser using an automaton built with grap
 
 ## How to run
 
-`python lexical_analyser.py <path/to/file>`
+`python lexical_analyzer.py <path/to/file>`
