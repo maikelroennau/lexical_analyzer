@@ -10,5 +10,5 @@ A simple implementation of a lexical analyser using an automaton built with grap
 
 **Maikel Maciel Rönnau**  
 *Computer Scientist  
-maikel.ronnau@ulbra.edu.br  
-[Linkedin](https://br.linkedin.com/in/maikelronnau)*
+maikel.ronnau@gmail.com  
+[Linkedin](https://br.linkedin.com/in/maikelronnau) - [GitHub](https://github.com/maikelronnau)*
